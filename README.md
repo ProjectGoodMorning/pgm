@@ -1,16 +1,11 @@
-# pgm
+# Project Good Morning
 
-A new Flutter project.
+An application that helps you start your mornings by giving need-to-know information (e.g.: weather, stock prices, news, etc.)
 
-## Getting Started
+## Contribution
 
-This project is a starting point for a Flutter application.
+Feel free to contribute to the project. You can make an issue about your problem / idea and discuss it there and later make a pull request, etc. NOTE: make a contribution guide
 
-A few resources to get you started if this is your first Flutter project:
+## Project status - won't be updated regularly
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1% done (basically done with creating the flutter project)
