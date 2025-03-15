@@ -8,4 +8,4 @@ Feel free to contribute to the project. You can make an issue about your problem
 
 ## Project status - won't be updated regularly
 
-1% done (basically done with creating the flutter project)
+0.1% done (basically done with creating the flutter project)
