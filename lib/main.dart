@@ -56,7 +56,7 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MyAppBar(pageTitle: "Home Page"),
+      appBar: const MyAppBar(pageTitle: "Home"),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
