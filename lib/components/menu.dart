@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import '../pages/home.dart';
+import '../pages/settings.dart';
 
 class MyMenu extends StatelessWidget implements PreferredSizeWidget {
   const MyMenu({super.key});
+
+  void _navigateTo(BuildContext context, Widget page) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => page),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +19,7 @@ class MyMenu extends StatelessWidget implements PreferredSizeWidget {
       padding: EdgeInsets.zero,
       children: [
         Container(
-          height: 120, // Adjust height here
+          height: 120,
           padding: const EdgeInsets.all(16),
           decoration:
               const BoxDecoration(color: Color.fromARGB(219, 71, 177, 162)),
@@ -29,6 +38,7 @@ class MyMenu extends StatelessWidget implements PreferredSizeWidget {
                   fontWeight: FontWeight.bold)),
           onTap: () {
             Navigator.pop(context);
+            _navigateTo(context, const HomePage());
           },
         ),
         ListTile(
@@ -40,6 +50,7 @@ class MyMenu extends StatelessWidget implements PreferredSizeWidget {
                   fontWeight: FontWeight.bold)),
           onTap: () {
             Navigator.pop(context);
+            _navigateTo(context, const SettingsPage());
           },
         )
       ],
