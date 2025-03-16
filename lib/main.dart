@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
 import 'components/appbar.dart';
+import 'components/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,6 +58,7 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(pageTitle: "Home"),
+      drawer: const MyMenu(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -16,8 +16,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
               fontFamily: 'Courier',
               color: Color.fromARGB(189, 37, 37, 37)),
         ),
-        backgroundColor:
-            const Color.fromARGB(219, 71, 177, 162).withOpacity(0.5),
+        backgroundColor: const Color.fromARGB(219, 71, 177, 162),
         centerTitle: true,
       ),
     );
