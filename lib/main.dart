@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
+import 'components/appbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,20 +56,21 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Project Good Morning | Home'),
-      ),
+      appBar: const MyAppBar(pageTitle: "Home Page"),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
               'Last update was on:',
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 30, fontFamily: "Courier"),
             ),
             Text(
               lastUpdated,
-              style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Courier"),
             ),
           ],
         ),
