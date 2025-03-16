@@ -9,7 +9,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     return ClipRRect(
       child: AppBar(
         title: Text(
-          'Project Good Morning | $pageTitle',
+          'PGM | $pageTitle',
           style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
