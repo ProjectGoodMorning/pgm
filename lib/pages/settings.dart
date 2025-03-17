@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/appbar.dart';
 import '../components/menu.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -6,10 +7,13 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Settings")),
-      drawer: const MyMenu(),
-      body: const Center(child: Text("Settings Page")),
+    return const Scaffold(
+      appBar: MyAppBar(pageTitle: "Settings"),
+      drawer: MyMenu(),
+      body: Center(
+          child: Column(children: <Widget>[
+        Text('Settings'),
+      ])),
     );
   }
 }

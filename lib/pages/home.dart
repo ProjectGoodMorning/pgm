@@ -46,18 +46,63 @@ class HomePageState extends State<HomePage> {
       drawer: const MyMenu(),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            const Text(
-              'Last update was on:',
-              style: TextStyle(fontSize: 30, fontFamily: "Courier"),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              color: const Color.fromARGB(255, 213, 64, 64),
+              child: Column(
+                children: <Widget>[
+                  const Text(
+                    'Last update was on:',
+                    style: TextStyle(fontSize: 20, fontFamily: "Courier"),
+                  ),
+                  Text(
+                    lastUpdated,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Courier",
+                    ),
+                  ),
+                ],
+              ),
             ),
-            Text(
-              lastUpdated,
-              style: const TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: "Courier"),
+            const SizedBox(height: 20),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: const Column(
+                children: [
+                  Text('Weather data'),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: const Column(
+                children: [
+                  Text('Stock prices'),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: const Column(
+                children: [
+                  Text('Currency prices'),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: const Column(
+                children: [
+                  Text('News'),
+                ],
+              ),
             ),
           ],
         ),
