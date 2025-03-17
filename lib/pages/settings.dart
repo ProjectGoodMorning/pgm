@@ -17,7 +17,8 @@ class SettingsPage extends StatelessWidget {
       body: Center(
           child: Column(children: <Widget>[
         SwitchListTile(
-          title: const Text("Dark Mode"),
+          title: const Text("Dark Mode",
+              style: TextStyle(fontSize: 20, fontFamily: "Courier")),
           value: themeProvider.themeMode == ThemeMode.dark,
           onChanged: (bool value) {
             themeProvider.toggleTheme(value);
