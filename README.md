@@ -1,6 +1,6 @@
 # Project Good Morning
 
-An application that helps you start your mornings by giving need-to-know information (e.g.: weather, stock prices, news, etc.)
+An application that helps you start your mornings by providing need-to-know information (e.g.: weather, stock prices, news, etc.)
 
 ## Contribution
 
