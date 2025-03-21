@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../pages/home.dart';
 import '../pages/settings.dart';
 
@@ -14,6 +15,7 @@ class MyMenu extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Drawer(
         child: ListView(
       padding: EdgeInsets.zero,
@@ -21,38 +23,38 @@ class MyMenu extends StatelessWidget implements PreferredSizeWidget {
         Container(
           height: 120,
           padding: const EdgeInsets.all(16),
-          decoration:
-              const BoxDecoration(color: Color.fromARGB(219, 71, 177, 162)),
+          decoration: BoxDecoration(
+              color: isDarkMode
+                  ? Color.fromARGB(255, 46, 45, 45)
+                  : Color.fromARGB(219, 71, 177, 162)),
           alignment: Alignment.centerLeft,
-          child: const Text(
+          child: Text(
             'PGM | Menu',
-            style: TextStyle(fontSize: 30, fontFamily: "Courier"),
+            style:
+                GoogleFonts.poppins(fontSize: 30, fontWeight: FontWeight.w500),
           ),
         ),
+        Divider(),
         ListTile(
-          tileColor: const Color.fromARGB(221, 241, 144, 26),
-          title: const Text('Home',
-              style: TextStyle(
-                  fontSize: 25,
-                  fontFamily: "Courier",
-                  fontWeight: FontWeight.bold)),
+          title: Text('Home',
+              style: GoogleFonts.poppins(
+                  fontSize: 25, fontWeight: FontWeight.bold)),
           onTap: () {
             Navigator.pop(context);
             _navigateTo(context, const HomePage());
           },
         ),
+        Divider(),
         ListTile(
-          tileColor: const Color.fromARGB(221, 241, 241, 26),
-          title: const Text('Settings',
-              style: TextStyle(
-                  fontSize: 25,
-                  fontFamily: "Courier",
-                  fontWeight: FontWeight.bold)),
+          title: Text('Settings',
+              style: GoogleFonts.poppins(
+                  fontSize: 25, fontWeight: FontWeight.bold)),
           onTap: () {
             Navigator.pop(context);
             _navigateTo(context, const SettingsPage());
           },
-        )
+        ),
+        Divider(),
       ],
     ));
   }

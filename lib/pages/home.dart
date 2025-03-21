@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
 import '../components/appbar.dart';
 import '../components/menu.dart';
+import '../utils/weather.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,24 +14,35 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   String lastUpdated = 'Never';
+  String temperature = '';
 
   @override
   void initState() {
     super.initState();
     _checkForUpdate();
+    _fetchWeather();
   }
 
-  Future<void> _checkForUpdate() async {
+  Future<void> _fetchWeather() async {
     final prefs = await SharedPreferences.getInstance();
     final currentDate = DateTime.now().toIso8601String().substring(0, 10);
 
     String? savedDate = prefs.getString('lastUpdatedDate');
 
     if (savedDate == null || savedDate != currentDate) {
-      setState(() {
-        lastUpdated = currentDate;
+      setState(() async {
+        try {
+          String temp = await getTemperature("Budapest");
+          setState(() {
+            temperature = temp;
+          });
+          lastUpdated = currentDate;
+        } catch (e) {
+          setState(() {
+            temperature = 'Error, report the bug on Discord';
+          });
+        }
       });
-
       await prefs.setString('lastUpdatedDate', currentDate);
     } else {
       setState(() {
@@ -38,6 +50,8 @@ class HomePageState extends State<HomePage> {
       });
     }
   }
+
+  Future<void> _checkForUpdate() async {}
 
   @override
   Widget build(BuildContext context) {
@@ -71,9 +85,15 @@ class HomePageState extends State<HomePage> {
             const SizedBox(height: 20),
             Container(
               padding: const EdgeInsets.symmetric(vertical: 10),
-              child: const Column(
+              child: Column(
                 children: [
-                  Text('Weather data'),
+                  Text("Weather:"),
+                  temperature.isEmpty
+                      ? const CircularProgressIndicator()
+                      : Text(
+                          temperature,
+                          style: const TextStyle(fontSize: 20),
+                        ),
                 ],
               ),
             ),

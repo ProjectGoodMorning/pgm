@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../components/appbar.dart';
 import '../components/menu.dart';
 import '../utils/theme_provider.dart';
@@ -17,8 +18,7 @@ class SettingsPage extends StatelessWidget {
       body: Center(
           child: Column(children: <Widget>[
         SwitchListTile(
-          title: const Text("Dark Mode",
-              style: TextStyle(fontSize: 20, fontFamily: "Courier")),
+          title: Text("Dark Mode", style: GoogleFonts.poppins(fontSize: 20)),
           value: themeProvider.themeMode == ThemeMode.dark,
           onChanged: (bool value) {
             themeProvider.toggleTheme(value);
