@@ -5,7 +5,7 @@ import '../components/appbar.dart';
 import '../components/menu.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   HomePageState createState() => HomePageState();
